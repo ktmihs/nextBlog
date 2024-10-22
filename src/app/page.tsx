@@ -1,5 +1,12 @@
+import type { NextPage } from 'next';
 import styles from './page.module.css';
 
-export default function Home() {
-	return <div className={styles.page}>main page</div>;
-}
+const Home: NextPage = () => {
+	return (
+		<div className={styles.page}>
+			<div>main page</div>
+		</div>
+	);
+};
+
+export default Home;
