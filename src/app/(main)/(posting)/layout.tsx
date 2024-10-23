@@ -7,8 +7,8 @@ export default function PostingLayout({
 }) {
 	return (
 		<>
-			<section>sidebar {'>'} catecory, tags...</section>
-			<section>tets{children}</section>
+			<section>sidebar {'>'} category, tags...</section>
+			<section>{children}</section>
 		</>
 	);
 }
