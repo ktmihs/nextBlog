@@ -1,4 +1,5 @@
 import React from 'react';
+import style from '@app/(main)/layout.module.css';
 
 export default function MainLayout({
 	children,
@@ -7,8 +8,11 @@ export default function MainLayout({
 }) {
 	return (
 		<>
-			<section>nav bar {'>'} home, settings...</section>
-			<section>{children}</section>
+			<section className={style.navbar}>
+				<span>home</span>
+				<span>settings</span>
+			</section>
+			<section className={style.mainContent}>{children}</section>
 		</>
 	);
 }
