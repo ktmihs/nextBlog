@@ -1,4 +1,5 @@
 import React from 'react';
+import style from '@app/(main)/(posting)/layout.module.css';
 
 export default function PostingLayout({
 	children,
@@ -7,8 +8,8 @@ export default function PostingLayout({
 }) {
 	return (
 		<>
-			<section>sidebar {'>'} category, tags...</section>
-			<section>{children}</section>
+			<section className={style.sidebar}>sidebar {'>'} category, tags...</section>
+			<section className={style.mainContent}>{children}</section>
 		</>
 	);
 }
