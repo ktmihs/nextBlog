@@ -1,3 +1,6 @@
+import '@/styles/globals.css';
+import style from '@app/layout.module.css';
+
 export const metadata = {
 	title: 'Next Blog',
 	description: 'Next.js로 만든 블로그(임시)',
@@ -11,9 +14,16 @@ export default function RootLayout({
 	return (
 		<html lang="ko">
 			<body>
-				<header>logo | search bar | user</header>
-				<main>{children}</main>
-				<footer>contact</footer>
+				<header className={style.header}>
+					<div>hamburger</div>
+					<div>logo</div>
+					<section>
+						<div>search bar</div>
+						<div>user</div>
+					</section>
+				</header>
+				<main className={style.main}>{children}</main>
+				<footer className={style.footer}>contact</footer>
 			</body>
 		</html>
 	);
