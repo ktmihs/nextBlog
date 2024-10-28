@@ -12,6 +12,17 @@
 .mainContent {
 	display: flex;
 	width: 100%;
+	min-width: 180px;
 	height: 100%;
 	background-color: rgb(157, 166, 182);
+}
+
+@media screen and (max-width: 992px) {
+	.navbar {
+		padding: 0;
+	}
+
+	.mainContent {
+		flex-direction: column;
+	}
 }
