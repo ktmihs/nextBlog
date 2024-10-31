@@ -24,9 +24,15 @@ export default function PostingLayout({
 	};
 
 	const currentPostList = [
-		{ id: 1, name: '가장 최근 글' },
-		{ id: 2, name: '두 번째 최근 글' },
-		{ id: 3, name: '세 번째 최근 글' },
+		{ id: 1, name: '가장 최근 글', thumbnail: '/public/img/test.jpg' },
+		{ id: 2, name: '두 번째 최근 글', thumbnail: '/public/img/test.jpg' },
+		{ id: 3, name: '세 번째 최근 글', thumbnail: '/public/img/test.jpg' },
+	];
+
+	const popularPostList = [
+		{ id: 1, name: '가장 인기 글', thumbnail: '/public/img/test.jpg' },
+		{ id: 2, name: '두 번째 인기 글', thumbnail: '/public/img/test.jpg' },
+		{ id: 3, name: '세 번째 인기 글', thumbnail: '/public/img/test.jpg' },
 	];
 
 	return (
@@ -38,9 +44,11 @@ export default function PostingLayout({
 						{categoryList.map(category => {
 							return (
 								<Link href={`/category/${category.id}`} key={category.id}>
-									<p>
-										{category.name} ({categoryLen[category.key]})
-									</p>
+									<section>
+										<p>
+											{category.name} ({categoryLen[category.key]})
+										</p>
+									</section>
 								</Link>
 							);
 						})}
@@ -52,7 +60,25 @@ export default function PostingLayout({
 						{currentPostList.map(currentPost => {
 							return (
 								<Link href={`/detail/${currentPost.id}`} key={currentPost.id}>
-									<p>{currentPost.name}</p>
+									<section className={style.summarySection}>
+										<p>{currentPost.name}</p>
+										<img src={currentPost.thumbnail} alt={currentPost.name} />
+									</section>
+								</Link>
+							);
+						})}
+					</div>
+				</section>
+				<section className={style.classify}>
+					<b>인기글</b>
+					<div>
+						{popularPostList.map(popularPost => {
+							return (
+								<Link href={`/detail/${popularPost.id}`} key={popularPost.id}>
+									<section className={style.summarySection}>
+										<p>{popularPost.name}</p>
+										<img src={popularPost.thumbnail} alt={popularPost.name} />
+									</section>
 								</Link>
 							);
 						})}
