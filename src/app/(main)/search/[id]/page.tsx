@@ -1,4 +1,4 @@
-import { IDPropsType } from '@/app/common/type';
+import { IDPropsType } from '@/common/type';
 import { FC } from 'react';
 
 const SearchPage: FC<IDPropsType> = ({ params }) => {
