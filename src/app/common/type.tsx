@@ -1,5 +1,5 @@
 export interface IDPropsType {
 	params: {
-		id: number;
+		id: string;
 	};
 }

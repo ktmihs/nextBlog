@@ -8,9 +8,9 @@ export default function PostingLayout({
 	children: React.ReactNode;
 }) {
 	const categoryList = [
-		{ id: 1, key: 'all', name: '전체' },
-		{ id: 2, key: 'project', name: 'project' },
-		{ id: 3, key: 'study', name: 'study' },
+		{ id: 'all', key: 'all', name: '전체' },
+		{ id: 'project', key: 'project', name: 'project' },
+		{ id: 'study', key: 'study', name: 'study' },
 	];
 
 	interface categoryLenType {
@@ -24,15 +24,15 @@ export default function PostingLayout({
 	};
 
 	const currentPostList = [
-		{ id: 1, name: '가장 최근 글', thumbnail: '/public/img/test.jpg' },
-		{ id: 2, name: '두 번째 최근 글', thumbnail: '/public/img/test.jpg' },
-		{ id: 3, name: '세 번째 최근 글', thumbnail: '/public/img/test.jpg' },
+		{ id: '1', name: '가장 최근 글', thumbnail: '/public/img/test.jpg' },
+		{ id: '2', name: '두 번째 최근 글', thumbnail: '/public/img/test.jpg' },
+		{ id: '3', name: '세 번째 최근 글', thumbnail: '/public/img/test.jpg' },
 	];
 
 	const popularPostList = [
-		{ id: 1, name: '가장 인기 글', thumbnail: '/public/img/test.jpg' },
-		{ id: 2, name: '두 번째 인기 글', thumbnail: '/public/img/test.jpg' },
-		{ id: 3, name: '세 번째 인기 글', thumbnail: '/public/img/test.jpg' },
+		{ id: '1', name: '가장 인기 글', thumbnail: '/public/img/test.jpg' },
+		{ id: '2', name: '두 번째 인기 글', thumbnail: '/public/img/test.jpg' },
+		{ id: '3', name: '세 번째 인기 글', thumbnail: '/public/img/test.jpg' },
 	];
 
 	return (
@@ -41,7 +41,7 @@ export default function PostingLayout({
 				<section className={style.classify}>
 					<b>분류</b>
 					<div>
-						{categoryList.map(category => {
+						{categoryList.map((category) => {
 							return (
 								<Link href={`/category/${category.id}`} key={category.id}>
 									<section>
@@ -57,7 +57,7 @@ export default function PostingLayout({
 				<section className={style.classify}>
 					<b>최근글</b>
 					<div>
-						{currentPostList.map(currentPost => {
+						{currentPostList.map((currentPost) => {
 							return (
 								<Link href={`/detail/${currentPost.id}`} key={currentPost.id}>
 									<section className={style.summarySection}>
@@ -72,7 +72,7 @@ export default function PostingLayout({
 				<section className={style.classify}>
 					<b>인기글</b>
 					<div>
-						{popularPostList.map(popularPost => {
+						{popularPostList.map((popularPost) => {
 							return (
 								<Link href={`/detail/${popularPost.id}`} key={popularPost.id}>
 									<section className={style.summarySection}>

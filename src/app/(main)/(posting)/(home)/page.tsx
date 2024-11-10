@@ -3,7 +3,7 @@ import styles from './page.module.css';
 import Link from 'next/link';
 
 interface articleType {
-	id: number;
+	id: string;
 	title: string;
 	thumbnail: string;
 	summary: string;
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 	// 임시 데이터 추가
 	const articleList = new Array(4).fill(null).reduce((list, _, idx) => {
 		const newArticle = {
-			id: 1000 + idx,
+			id: `${1000 + idx}`,
 			title: `article${idx + 1}`,
 			thumbnail: 'http://test.jpg',
 			summary: 'qwertyuiop asdfghjkl zxcvbnm...',
