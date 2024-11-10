@@ -18,7 +18,7 @@ const Home: NextPage = () => {
 			title: `article${idx + 1}`,
 			thumbnail: 'http://test.jpg',
 			summary: 'qwertyuiop asdfghjkl zxcvbnm...',
-			url: 'https://naver.com',
+			url: `/detail/${1000 + idx}`,
 		};
 		return [...list, newArticle];
 	}, []);
