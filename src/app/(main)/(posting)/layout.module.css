@@ -16,6 +16,16 @@
 	font-size: 14px;
 }
 
+.classifyTitle {
+	display: flex;
+	justify-content: space-between;
+}
+
+.classifyTitle > span:hover,
+.classifyTitle > span.activeTab {
+	font-weight: 700;
+}
+
 .classify > div {
 	display: flex;
 	flex-direction: column;
