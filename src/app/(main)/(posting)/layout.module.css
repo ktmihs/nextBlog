@@ -1,0 +1,76 @@
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	width: 30%;
+	min-width: 210px;
+	max-width: 300px;
+	height: 100%;
+	min-height: calc(100vh - 325px);
+	padding: 30px;
+}
+
+.sidebar > section {
+	padding: 10px;
+	border: 1px solid var(--text-base);
+	font-size: 14px;
+}
+
+.classifyTitle {
+	display: flex;
+	justify-content: space-between;
+}
+
+.classifyTitle > span:hover,
+.classifyTitle > span.activeTab {
+	font-weight: 700;
+}
+
+.classify > div {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.classify section:hover {
+	text-decoration: underline;
+	font-weight: 700;
+}
+
+.classify > b {
+	line-height: 30px;
+	font-size: 15px;
+}
+
+.classify p {
+	line-height: 24px;
+}
+
+.summarySection {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.summarySection img {
+	width: 60px;
+	height: 60px;
+	border: 1px solid var(--text-base);
+}
+
+.mainContent {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(161, 173, 197);
+	min-height: calc(100vh - 325px);
+}
+
+@media screen and (max-width: 992px) {
+	.sidebar {
+		width: 100%;
+		min-width: 100%;
+		max-width: 100%;
+		min-height: 100%;
+		padding: 20px 0;
+	}
+}
