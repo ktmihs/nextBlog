@@ -101,6 +101,7 @@ const config: Config = {
 		'^@common/(.*)$': '<rootDir>/src/common/$1',
 		'^@components/(.*)$': '<rootDir>/src/components/$1',
 		'^@styles/(.*)$': '<rootDir>/src/styles/$1',
+		'^@lib/(.*)$': '<rootDir>/src/lib/$1',
 	},
 
 	// An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
