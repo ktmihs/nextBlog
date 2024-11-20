@@ -11,16 +11,6 @@ export default function PostingLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	interface categoryLenType {
-		[key: string]: number;
-	}
-
-	const categoryLen: categoryLenType = {
-		all: 20,
-		project: 13,
-		study: 7,
-	};
-
 	const currentPostList = [
 		{ id: '1', name: '가장 최근 글', thumbnail: '/public/img/test.jpg' },
 		{ id: '2', name: '두 번째 최근 글', thumbnail: '/public/img/test.jpg' },
@@ -87,7 +77,7 @@ export default function PostingLayout({
 									<Link href={`/category/${category.id}`} key={category.id}>
 										<section>
 											<p>
-												{category.name} ({categoryLen[category.id]})
+												{category.name} ({category.len})
 											</p>
 										</section>
 									</Link>
