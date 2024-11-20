@@ -1,20 +1,16 @@
 'use client';
 
 import React, { useState, useEffect, MouseEvent } from 'react';
-import style from '@app/(main)/(posting)/layout.module.css';
 import Link from 'next/link';
+import style from '@app/(main)/(posting)/layout.module.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '@lib/store';
 
 export default function PostingLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
-	const categoryList = [
-		{ id: 'all', key: 'all', name: '전체' },
-		{ id: 'project', key: 'project', name: 'project' },
-		{ id: 'study', key: 'study', name: 'study' },
-	];
-
 	interface categoryLenType {
 		[key: string]: number;
 	}
@@ -37,6 +33,9 @@ export default function PostingLayout({
 		{ id: '3', name: '세 번째 인기 글', thumbnail: '/public/img/test.jpg' },
 	];
 
+	const categoryList = useSelector(
+		(state: RootState) => state.category.categoryList,
+	);
 	const [windowWidth, setWindowWidth] = useState<number>(0);
 	const [currentTab, setCurrentTab] = useState<string>('classifyPost');
 
@@ -83,12 +82,12 @@ export default function PostingLayout({
 					<section className={style.classify}>
 						<b>분류</b>
 						<div>
-							{categoryList.map((category) => {
+							{categoryList.map(category => {
 								return (
 									<Link href={`/category/${category.id}`} key={category.id}>
 										<section>
 											<p>
-												{category.name} ({categoryLen[category.key]})
+												{category.name} ({categoryLen[category.id]})
 											</p>
 										</section>
 									</Link>
@@ -101,7 +100,7 @@ export default function PostingLayout({
 					<section className={style.classify}>
 						<b>최근글</b>
 						<div>
-							{currentPostList.map((currentPost) => {
+							{currentPostList.map(currentPost => {
 								return (
 									<Link href={`/detail/${currentPost.id}`} key={currentPost.id}>
 										<section className={style.summarySection}>
@@ -118,7 +117,7 @@ export default function PostingLayout({
 					<section className={style.classify}>
 						<b>인기글</b>
 						<div>
-							{popularPostList.map((popularPost) => {
+							{popularPostList.map(popularPost => {
 								return (
 									<Link href={`/detail/${popularPost.id}`} key={popularPost.id}>
 										<section className={style.summarySection}>
