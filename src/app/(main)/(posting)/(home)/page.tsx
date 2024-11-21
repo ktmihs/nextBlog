@@ -25,23 +25,26 @@ const Home: NextPage = () => {
 
 	return (
 		<section className={styles.page}>
+			<h2 className={styles.categoryName}>main page</h2>
 			<section className={styles.listInfo}>
 				<span>total 1</span>
 				<div>dropdown</div>
 			</section>
-			<section className={styles.articleList}>
+			<ul className={styles.articleList}>
 				{articleList.map((article: articleType) => {
 					return (
-						<Link href={article.url} key={article.id}>
+						<li key={article.id}>
 							<article className={styles.article}>
-								<img src={article.thumbnail} alt={article.title} />
-								<span>{article.title}</span>
-								<span>{article.summary}</span>
+								<Link href={article.url}>
+									<img src={article.thumbnail} alt={article.title} />
+									<h3>{article.title}</h3>
+									<span>{article.summary}</span>
+								</Link>
 							</article>
-						</Link>
+						</li>
 					);
 				})}
-			</section>
+			</ul>
 		</section>
 	);
 };
