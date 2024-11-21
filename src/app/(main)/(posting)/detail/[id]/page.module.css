@@ -1,0 +1,41 @@
+.currentCategoryList {
+	padding: 20px;
+}
+
+.postList {
+	display: flex;
+	flex-direction: column;
+}
+
+.postItem {
+	line-height: 28px;
+}
+
+.postItem > a {
+	display: flex;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 1400px) {
+	.articleList {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.articleList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.page {
+		padding: 20px 0;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.articleList {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
