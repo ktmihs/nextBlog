@@ -8,7 +8,21 @@
 }
 
 .postItem {
+	padding: 4px;
 	line-height: 28px;
+}
+
+.postItem.currentPost {
+	background-color: #eee;
+	border: 1px solid var(--text-base);
+	padding: 3px;
+	font-weight: 700;
+}
+
+.postItem:hover {
+	padding: 2px;
+	border: 2px solid var(--text-base);
+	font-weight: 700;
 }
 
 .postItem > a {
