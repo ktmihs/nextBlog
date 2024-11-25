@@ -18,7 +18,7 @@ export default function RootLayout({
 				<RootProvider>
 					<header className={style.header}>
 						<div>hamburger</div>
-						<div>logo</div>
+						<h1>logo</h1>
 						<section>
 							<div>search bar</div>
 							<div>user</div>
