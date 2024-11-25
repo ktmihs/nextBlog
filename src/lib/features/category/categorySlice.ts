@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface CategoryType {
+export interface CategoryType {
 	id: string;
 	name: string;
 }
 
-interface CategoryStateType {
+export interface CategoryStateType {
 	categoryList: CategoryType[];
 	selectedCategory: string | null;
 }
