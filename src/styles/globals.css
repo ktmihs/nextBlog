@@ -2,6 +2,12 @@
 	--background: #ffffff;
 	--foreground: #181818;
 	--text-base: #181818;
+	--gray000: #333333;
+	--gray100: #666666;
+	--gray200: #999999;
+	--gray300: #bbbbbb;
+	--gray400: #dfdfdf;
+	--gray500: #eeeeee;
 }
 
 @media (prefers-color-scheme: dark) {
