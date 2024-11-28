@@ -41,17 +41,24 @@ const DetailPage: FC<IDPropsType> = ({ params }) => {
 				'어떤 글이냐면 나도 모르겠는데 일단 그냥 고고~ 어떤 글이냐면 나도 모르겠는데 일단 그냥 고고',
 		},
 	];
+	const article = {
+		id: '1001',
+		title: '오늘의 글 제목',
+		author: 'ktmihs',
+		date: '2024-11-28',
+		content: '글글글글글',
+	};
 	return (
-		<div>
-			<section className={styles.currentCategoryList}>
-				<div className={styles.currentCategoryList}>현재 카테고리명</div>
+		<div className={styles.articleContainer}>
+			<section>
+				<span>현재 카테고리명</span>
 				<div>
-					<ul className={styles.postList}>
+					<ul className={styles.articleList}>
 						{articleList.map(article => (
 							<li
 								key={article.id}
-								className={`${styles.postItem} ${
-									article.id === id && styles.currentPost
+								className={`${styles.articleItem} ${
+									article.id === id && styles.currentArticle
 								}`}
 							>
 								<Link href={`/detail/${article.id}`}>
@@ -63,7 +70,16 @@ const DetailPage: FC<IDPropsType> = ({ params }) => {
 					</ul>
 				</div>
 			</section>
-			<section>detail page ({params.id})</section>
+			<hr />
+			<article>
+				<h2 className={styles.articleTitle}>{article.title}</h2>
+				<section className={styles.articleInfo}>
+					<span>{article.author}</span>
+					<span>•</span>
+					<span>{article.date}</span>
+				</section>
+				<section>{article.content}</section>
+			</article>
 		</div>
 	);
 };
