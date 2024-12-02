@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import style from '@app/layout.module.css';
 import RootProvider from '@app/RootProvider';
+import Link from 'next/link';
 
 export const metadata = {
 	title: 'Next Blog',
@@ -17,7 +18,9 @@ export default function RootLayout({
 			<body>
 				<RootProvider>
 					<header className={style.header}>
-						<h1>logo</h1>
+						<Link href={'/'}>
+							<h1>logo</h1>
+						</Link>
 						<section>
 							<div>search bar</div>
 							<div>user</div>
