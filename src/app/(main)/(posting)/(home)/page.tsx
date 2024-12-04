@@ -22,12 +22,13 @@ const Home: NextPage = () => {
 		};
 		return [...list, newArticle];
 	}, []);
+	const totalCnt = articleList.length;
 
 	return (
 		<section className={styles.page}>
 			<h2 className={styles.categoryName}>main page</h2>
 			<section className={styles.listInfo}>
-				<span>total 1</span>
+				<span>전체 {totalCnt}개의 글</span>
 				<div>dropdown</div>
 			</section>
 			<ul className={styles.articleList}>
