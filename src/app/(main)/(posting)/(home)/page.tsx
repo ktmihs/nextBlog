@@ -1,14 +1,7 @@
 import type { NextPage } from 'next';
-import styles from './page.module.css';
-import Link from 'next/link';
-
-interface articleType {
-	id: string;
-	title: string;
-	thumbnail: string;
-	summary: string;
-	url: string;
-}
+import styles from '@app/(main)/(posting)/(home)/page.module.css';
+import ArticleBox from '@/common/component/article/articleBox';
+import { articleType } from '@/common/component/article/articleBoxType';
 
 const Home: NextPage = () => {
 	// 임시 데이터 추가
@@ -33,17 +26,7 @@ const Home: NextPage = () => {
 			</section>
 			<ul className={styles.articleList}>
 				{articleList.map((article: articleType) => {
-					return (
-						<li key={article.id}>
-							<article className={styles.article}>
-								<Link href={article.url}>
-									<img src={article.thumbnail} alt={article.title} />
-									<h3>{article.title}</h3>
-									<span>{article.summary}</span>
-								</Link>
-							</article>
-						</li>
-					);
+					return <ArticleBox article={article} />;
 				})}
 			</ul>
 		</section>
