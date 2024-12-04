@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import Link from 'next/link';
 import { IDPropsType } from '@/common/type';
-import styles from './page.module.css';
+import styles from '@app/(main)/(posting)/category/[id]/page.module.css';
+import ArticleBox from '@/common/component/article/articleBox';
 
 const CategoryPage: FC<IDPropsType> = ({ params }) => {
 	// 스토어에서 가져올 임시 데이터
@@ -11,6 +11,7 @@ const CategoryPage: FC<IDPropsType> = ({ params }) => {
 			title: 'title',
 			thumbnail: '/',
 			summary: '어떤 글이냐면 나도 모르겠는데 일단 그냥 고고',
+			url: `/detail/1001`,
 		},
 		{
 			id: '1002',
@@ -18,6 +19,7 @@ const CategoryPage: FC<IDPropsType> = ({ params }) => {
 			date: '2024-11-21',
 			thumbnail: '/',
 			summary: '어떤 글이냐면 나도 모르겠는데 일단 그냥 고고',
+			url: `/detail/1002`,
 		},
 		{
 			id: '1003',
@@ -25,6 +27,7 @@ const CategoryPage: FC<IDPropsType> = ({ params }) => {
 			date: '2024-11-21',
 			thumbnail: '/',
 			summary: '어떤 글이냐면 나도 모르겠는데 일단 그냥 고고',
+			url: `/detail/1003`,
 		},
 	];
 
@@ -34,15 +37,7 @@ const CategoryPage: FC<IDPropsType> = ({ params }) => {
 				<h2 className={styles.categoryName}>category page ({params.id})</h2>
 				<ul className={styles.articleList}>
 					{articleList.map(article => (
-						<li key={article.id} className={styles.articleItem}>
-							<article>
-								<Link href={`/detail/${article.id}`}>
-									<img src={article.thumbnail} className={styles.thumbnail} />
-									<h3 className={styles.title}>{article.title}</h3>
-									<span className={styles.summary}>{article.summary}</span>
-								</Link>
-							</article>
-						</li>
+						<ArticleBox article={article} />
 					))}
 				</ul>
 			</section>
