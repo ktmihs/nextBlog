@@ -10,7 +10,13 @@
 
 .header::before {
 	content: '';
-	width: 30px;
+	width: 100px;
+}
+
+.UIbar {
+	display: flex;
+	align-items: center;
+	gap: 4px;
 }
 
 .main {

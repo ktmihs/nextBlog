@@ -21,7 +21,7 @@ export default function RootLayout({
 						<Link href={'/'}>
 							<h1>logo</h1>
 						</Link>
-						<section>
+						<section className={style.UIbar}>
 							<div>search bar</div>
 							<div>user</div>
 						</section>
