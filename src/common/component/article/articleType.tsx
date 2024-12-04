@@ -4,4 +4,5 @@ export interface articleType {
 	thumbnail: string;
 	summary: string;
 	url: string;
+	date: string;
 }

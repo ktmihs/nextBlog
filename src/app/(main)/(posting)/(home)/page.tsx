@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import styles from '@app/(main)/(posting)/(home)/page.module.css';
 import ArticleBox from '@/common/component/article/articleBox';
-import { articleType } from '@/common/component/article/articleBoxType';
+import { articleType } from '@/common/component/article/articleType';
 
 const Home: NextPage = () => {
 	// 임시 데이터 추가

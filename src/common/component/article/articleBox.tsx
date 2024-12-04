@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from '@/common/component/article/articleBox.module.css';
-import { articleType } from '@/common/component/article/articleBoxType';
+import { articleType } from '@/common/component/article/articleType';
 
 const ArticleBox = ({ article }: { article: articleType }) => {
 	return (
