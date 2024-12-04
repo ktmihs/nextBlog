@@ -5,11 +5,15 @@ import { articleType } from '@/common/component/article/articleBoxType';
 const ArticleBox = ({ article }: { article: articleType }) => {
 	return (
 		<li key={article.id}>
-			<article className={styles.article}>
+			<article className={styles.articleItem}>
 				<Link href={article.url}>
-					<img src={article.thumbnail} alt={article.title} />
-					<h3>{article.title}</h3>
-					<span>{article.summary}</span>
+					<img
+						src={article.thumbnail}
+						alt={article.title}
+						className={styles.thumbnail}
+					/>
+					<h3 className={styles.title}>{article.title}</h3>
+					<span className={styles.summary}>{article.summary}</span>
 				</Link>
 			</article>
 		</li>

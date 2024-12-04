@@ -1,4 +1,4 @@
-.article {
+.articleItem {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -8,11 +8,32 @@
 	border: 1px solid var(--text-base);
 }
 
-.article > a {
+.articleItem:hover {
+	box-shadow: 2px 5px 5px 5px #dddddd;
+}
+
+.articleItem article {
 	width: 100%;
 	height: 100%;
 }
 
-.article:hover {
-	box-shadow: 2px 5px 5px 5px #dddddd;
+.articleItem a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.thumbnail {
+	display: block;
+	width: 100%;
+	height: 120px;
+	border: 1px solid var(--text-base);
+}
+
+.title {
+	font-size: 20px;
+}
+
+.summary {
+	font-size: 14px;
 }
