@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { IDPropsType } from '@/common/type';
 import styles from './page.module.css';
+import { articleList } from '@/common/component/article/article.mock';
 import { articleType } from '@/common/component/article/articleType';
 
 import ArticleRow from '@/common/component/article/articleRow';
@@ -8,41 +9,7 @@ import ArticleRow from '@/common/component/article/articleRow';
 const DetailPage: FC<IDPropsType> = ({ params }) => {
 	// id 기반 페이지 렌더링
 	const { id } = params;
-	// 스토어에서 가져올 임시 데이터
-	const articleList = [
-		{
-			id: '1000',
-			title: 'title',
-			date: '2024-11-21',
-			thumbnail: '/',
-			summary:
-				'어떤 글이냐면 나도 모르겠는데 일단 그냥 고고~ 어떤 글이냐면 나도 모르겠는데 일단 그냥 고고',
-		},
-		{
-			id: '1001',
-			title: 'title',
-			date: '2024-11-21',
-			thumbnail: '/',
-			summary:
-				'어떤 글이냐면 나도 모르겠는데 일단 그냥 고고~ 어떤 글이냐면 나도 모르겠는데 일단 그냥 고고',
-		},
-		{
-			id: '1002',
-			title: 'title',
-			date: '2024-11-21',
-			thumbnail: '/',
-			summary:
-				'어떤 글이냐면 나도 모르겠는데 일단 그냥 고고~ 어떤 글이냐면 나도 모르겠는데 일단 그냥 고고',
-		},
-		{
-			id: '1003',
-			title: 'title',
-			date: '2024-11-21',
-			thumbnail: '/',
-			summary:
-				'어떤 글이냐면 나도 모르겠는데 일단 그냥 고고~ 어떤 글이냐면 나도 모르겠는데 일단 그냥 고고',
-		},
-	];
+	// store의 현재 카테고리를 통한 articleList API로 가져오기
 	const article = {
 		id: '1001',
 		title: '오늘의 글 제목',
@@ -50,6 +17,7 @@ const DetailPage: FC<IDPropsType> = ({ params }) => {
 		date: '2024-11-28',
 		content: '글글글글글',
 	};
+
 	return (
 		<div className={styles.articleContainer}>
 			<section>

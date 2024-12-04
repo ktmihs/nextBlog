@@ -2,19 +2,9 @@ import type { NextPage } from 'next';
 import styles from '@app/(main)/(posting)/(home)/page.module.css';
 import ArticleBox from '@/common/component/article/articleBox';
 import { articleType } from '@/common/component/article/articleType';
+import { articleList } from '@/common/component/article/article.mock';
 
 const Home: NextPage = () => {
-	// 임시 데이터 추가
-	const articleList = new Array(4).fill(null).reduce((list, _, idx) => {
-		const newArticle = {
-			id: `${1000 + idx}`,
-			title: `article${idx + 1}`,
-			thumbnail: 'http://test.jpg',
-			summary: 'qwertyuiop asdfghjkl zxcvbnm...',
-			url: `/detail/${1000 + idx}`,
-		};
-		return [...list, newArticle];
-	}, []);
 	const totalCnt = articleList.length;
 
 	return (
