@@ -25,6 +25,10 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+	position: relative;
+}
+
 * {
 	box-sizing: border-box;
 	padding: 0;
