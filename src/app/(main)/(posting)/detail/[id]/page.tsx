@@ -1,7 +1,9 @@
 import { FC } from 'react';
 import { IDPropsType } from '@/common/type';
 import styles from './page.module.css';
-import Link from 'next/link';
+import { articleType } from '@/common/component/article/articleType';
+
+import ArticleRow from '@/common/component/article/articleRow';
 
 const DetailPage: FC<IDPropsType> = ({ params }) => {
 	// id 기반 페이지 렌더링
@@ -54,18 +56,8 @@ const DetailPage: FC<IDPropsType> = ({ params }) => {
 				<span>현재 카테고리명</span>
 				<div>
 					<ul className={styles.articleList}>
-						{articleList.map(article => (
-							<li
-								key={article.id}
-								className={`${styles.articleItem} ${
-									article.id === id && styles.currentArticle
-								}`}
-							>
-								<Link href={`/detail/${article.id}`}>
-									<span>{article.title}</span>
-									<span>{article.date}</span>
-								</Link>
-							</li>
+						{articleList.map((article: articleType) => (
+							<ArticleRow article={article} currentId={id} />
 						))}
 					</ul>
 				</div>

@@ -13,29 +13,6 @@
 	flex-direction: column;
 }
 
-.articleItem {
-	padding: 4px;
-	line-height: 28px;
-}
-
-.articleItem.currentArticle {
-	background-color: #eee;
-	border: 1px solid var(--text-base);
-	padding: 3px;
-	font-weight: 700;
-}
-
-.articleItem:hover {
-	padding: 2px;
-	border: 2px solid var(--text-base);
-	font-weight: 700;
-}
-
-.articleItem > a {
-	display: flex;
-	justify-content: space-between;
-}
-
 .articleTitle {
 	text-align: left;
 	font-size: 36px;
