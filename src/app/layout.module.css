@@ -8,6 +8,17 @@
 	background-color: rgb(238, 244, 255);
 }
 
+.header::before {
+	content: '';
+	width: 100px;
+}
+
+.UIbar {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
 .main {
 	width: 100%;
 	min-height: calc(100vh - 350px);
