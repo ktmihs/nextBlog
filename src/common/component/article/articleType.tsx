@@ -3,6 +3,5 @@ export interface articleType {
 	title: string;
 	thumbnail: string;
 	summary: string;
-	url: string;
 	date: string;
 }

@@ -6,7 +6,7 @@ const ArticleBox = ({ article }: { article: articleType }) => {
 	return (
 		<li key={article.id}>
 			<article className={styles.articleItem}>
-				<Link href={article.url}>
+				<Link href={`/detail/${article.id}`}>
 					<img
 						src={article.thumbnail}
 						alt={article.title}
