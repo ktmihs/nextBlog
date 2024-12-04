@@ -13,6 +13,7 @@ export default function MainLayout({
 				<span>settings</span>
 			</section>
 			<section className={style.mainContent}>{children}</section>
+			<button className={style.postButton}>글쓰기</button>
 		</>
 	);
 }
