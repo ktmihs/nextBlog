@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 			</section>
 			<ul className={styles.articleList}>
 				{articleList.map((article: articleType) => {
-					return <ArticleBox article={article} />;
+					return <ArticleBox article={article} key={article.id} />;
 				})}
 			</ul>
 		</section>

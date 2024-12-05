@@ -17,7 +17,7 @@ const DetailPage: FC<IDPropsType> = ({ params }) => {
 				<div>
 					<ul className={styles.articleList}>
 						{articleList.map((article: articleType) => (
-							<ArticleRow article={article} currentId={id} />
+							<ArticleRow article={article} currentId={id} key={article.id} />
 						))}
 					</ul>
 				</div>

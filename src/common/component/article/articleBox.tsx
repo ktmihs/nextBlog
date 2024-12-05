@@ -4,7 +4,7 @@ import { articleType } from '@/common/component/article/articleType';
 
 const ArticleBox = ({ article }: { article: articleType }) => {
 	return (
-		<li key={article.id}>
+		<li>
 			<article className={styles.articleItem}>
 				<Link href={`/detail/${article.id}`}>
 					<img

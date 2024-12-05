@@ -10,7 +10,6 @@ interface propsType {
 const ArticleRow = ({ article, currentId }: propsType) => {
 	return (
 		<li
-			key={article.id}
 			className={`${styles.articleItem} ${
 				article.id === currentId && styles.currentArticle
 			}`}

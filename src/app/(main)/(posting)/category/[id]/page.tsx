@@ -12,7 +12,7 @@ const CategoryPage: FC<IDPropsType> = ({ params }) => {
 				<h2 className={styles.categoryName}>category page ({params.id})</h2>
 				<ul className={styles.articleList}>
 					{articleList.map((article: articleType) => (
-						<ArticleBox article={article} />
+						<ArticleBox article={article} key={article.id} />
 					))}
 				</ul>
 			</section>
