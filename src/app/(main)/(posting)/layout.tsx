@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, MouseEvent } from 'react';
 import style from '@app/(main)/(posting)/layout.module.css';
-import ArticlePreviewList from '@/common/component/sidebar/articlePreviewList';
+import ArticlePreviewList from '@/common/component/Sidebar/ArticlePreviewList';
 
 export default function PostingLayout({
 	children,

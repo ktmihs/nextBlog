@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { IDPropsType } from '@/common/type';
 import styles from '@app/(main)/(posting)/category/[id]/page.module.css';
-import ArticleBox from '@/common/component/article/articleBox';
-import { articleList } from '@/common/component/article/article.mock';
-import { articleType } from '@/common/component/article/articleType';
+import ArticleBox from '@/common/component/Article/ArticleBox';
+import { articleList } from '@/common/component/Article/Article.mock';
+import { articleType } from '@/common/component/Article/ArticleType';
 
 const CategoryPage: FC<IDPropsType> = ({ params }) => {
 	return (

@@ -1,5 +1,5 @@
-import styles from '@/common/component/article/articleDetail.module.css';
-import { article } from '@/common/component/article/article.mock';
+import styles from '@/common/component/Article/ArticleDetail.module.css';
+import { article } from '@/common/component/Article/Article.mock';
 
 const ArticleDetail = ({ currentId }: { currentId: string }) => {
 	// store의 현재 currentId를 통한 articleList API로 가져오기

@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import styles from '@app/(main)/(posting)/(home)/page.module.css';
-import ArticleBox from '@/common/component/article/articleBox';
-import { articleType } from '@/common/component/article/articleType';
-import { articleList } from '@/common/component/article/article.mock';
+import ArticleBox from '@/common/component/Article/ArticleBox';
+import { articleType } from '@/common/component/Article/ArticleType';
+import { articleList } from '@/common/component/Article/Article.mock';
 
 const Home: NextPage = () => {
 	const totalCnt = articleList.length;
