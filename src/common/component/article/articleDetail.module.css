@@ -1,0 +1,15 @@
+.articleTitle {
+	text-align: left;
+	font-size: 36px;
+}
+
+.articleInfo {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.articleInfo > span {
+	font-size: 16px;
+	line-height: 28px;
+}
