@@ -3,7 +3,7 @@ import styles from '@app/(main)/(posting)/(home)/page.module.css';
 import ArticleBox from '@/common/component/Article/ArticleBox';
 import { articleType } from '@/common/component/Article/ArticleType';
 import { articleList } from '@/common/component/Article/Article.mock';
-import ArticleListControls from '@/common/component/ArticleListControls/ArticleListControls';
+import ArticleListControls from '@/common/component/Article/ArticleListControls';
 
 const Home: NextPage = () => {
 	return (

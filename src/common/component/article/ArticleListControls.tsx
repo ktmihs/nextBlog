@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '@common/component/ArticleListControls/ArticleListControls.module.css';
+import styles from '@common/component/Article/ArticleListControls.module.css';
 import Dropdown from '@/common/component/Dropdown/Dropdown';
 import { articleList } from '@/common/component/Article/Article.mock';
 
