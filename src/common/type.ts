@@ -3,3 +3,7 @@ export interface IDPropsType {
 		id: string;
 	};
 }
+
+export interface ChildrenType {
+	children: React.ReactNode;
+}
