@@ -1,18 +1,15 @@
-import '@/styles/globals.css';
-import style from '@app/layout.module.css';
-import RootProvider from '@app/RootProvider';
 import Link from 'next/link';
+import '@/styles/globals.css';
+import RootProvider from '@app/RootProvider';
+import style from '@app/layout.module.css';
+import { ChildrenType } from '@/common/type';
 
 export const metadata = {
 	title: 'Next Blog',
 	description: 'Next.js로 만든 블로그(임시)',
 };
 
-export default function RootLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: ChildrenType) {
 	return (
 		<html lang="ko">
 			<body>
