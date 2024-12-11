@@ -1,12 +1,9 @@
 import React from 'react';
 import style from '@app/(main)/(posting)/layout.module.css';
+import { ChildrenType } from '@/common/type';
 import Sidebar from '@/common/component/Sidebar/Sidebar';
 
-export default function PostingLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export default function PostingLayout({ children }: ChildrenType) {
 	return (
 		<>
 			<Sidebar />
