@@ -1,8 +1,13 @@
 import type { NextPage } from 'next';
-import styles from './page.module.css';
+import styles from '@app/posting/page.module.css';
+import { EditorWrapper } from '@/common/component/Editor/EditorWrapper';
 
 const PostingPage: NextPage = () => {
-	return <div className={styles.postingContainer}>posting page</div>;
+	return (
+		<div className={styles.postingContainer}>
+			<EditorWrapper />
+		</div>
+	);
 };
 
 export default PostingPage;
