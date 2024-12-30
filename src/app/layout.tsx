@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import '@/styles/globals.css';
+import '@styles/globals.css';
 import RootProvider from '@app/RootProvider';
 import style from '@app/layout.module.css';
-import { ChildrenType } from '@/common/type';
+import { ChildrenType } from '@common/type';
 
 export const metadata = {
 	title: 'Next Blog',

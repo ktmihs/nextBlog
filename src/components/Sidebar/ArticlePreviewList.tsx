@@ -6,7 +6,7 @@ import { articleList } from '@components/Article/Article.mock';
 import styles from '@components/Sidebar/ArticlePreviewList.module.css';
 import CategoryItem from '@components/Sidebar/ArticlePreviewCategoryItem';
 import PreviewArticleItem from '@components/Sidebar/ArticlePreviewItem';
-import { CategoryType } from '@/lib/features/category/categorySlice';
+import { CategoryType } from '@lib/features/category/categorySlice';
 
 interface classifyPostType {
 	tabName: '분류';

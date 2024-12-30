@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { IDPropsType } from '@/common/type';
-import styles from '@/app/(main)/(posting)/detail/[id]/page.module.css';
+import { IDPropsType } from '@common/type';
+import styles from '@app/(main)/(posting)/detail/[id]/page.module.css';
 import { articleList } from '@components/Article/Article.mock';
 import { articleType } from '@components/Article/ArticleType';
 import ArticleRow from '@components/Article/ArticleRow';

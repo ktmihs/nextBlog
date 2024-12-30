@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { IDPropsType } from '@/common/type';
+import { IDPropsType } from '@common/type';
 import styles from '@app/(main)/(posting)/category/[id]/page.module.css';
 import ArticleBox from '@components/Article/ArticleBox';
 import { articleList } from '@components/Article/Article.mock';

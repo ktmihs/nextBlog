@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { CategoryType } from '@/lib/features/category/categorySlice';
+import { CategoryType } from '@lib/features/category/categorySlice';
 
 interface categoryLenType {
 	[key: string]: number;

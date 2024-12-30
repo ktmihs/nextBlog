@@ -1,6 +1,6 @@
 import React, { useState, MouseEvent } from 'react';
 import { useRouter } from 'next/navigation';
-import { CategoryType } from '@/lib/features/category/categorySlice';
+import { CategoryType } from '@lib/features/category/categorySlice';
 import { articleType } from '@components/Article/ArticleType';
 import styles from '@components/Sidebar/ArticlePreviewItem.module.css';
 import style from '@components/Sidebar/Sidebar.module.css';

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/navigation';
 import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { rootStore } from '@/lib/store';
+import { rootStore } from '@lib/store';
 import {
 	CategoryItem,
 	PreviewArticleItem,
