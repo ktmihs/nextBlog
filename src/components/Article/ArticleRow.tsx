@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { articleType } from '@/common/component/Article/ArticleType';
-import styles from '@/common/component/Article/ArticleRow.module.css';
+import { articleType } from '@components/Article/ArticleType';
+import styles from '@components/Article/ArticleRow.module.css';
 
 interface propsType {
 	article: articleType;

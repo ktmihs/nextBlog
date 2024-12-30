@@ -1,9 +1,9 @@
 import React, { useState, MouseEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { CategoryType } from '@/lib/features/category/categorySlice';
-import { articleType } from '@/common/component/Article/ArticleType';
-import styles from '@/common/component/Sidebar/ArticlePreviewItem.module.css';
-import style from '@/common/component/Sidebar/Sidebar.module.css';
+import { articleType } from '@components/Article/ArticleType';
+import styles from '@components/Sidebar/ArticlePreviewItem.module.css';
+import style from '@components/Sidebar/Sidebar.module.css';
 
 interface categoryLenType {
 	[key: string]: number;

@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, MouseEvent } from 'react';
-import style from '@/common/component/Sidebar/Sidebar.module.css';
-import ArticlePreviewList from '@/common/component/Sidebar/ArticlePreviewList';
+import style from '@components/Sidebar/Sidebar.module.css';
+import ArticlePreviewList from '@components/Sidebar/ArticlePreviewList';
 
 const Sidebar = () => {
 	const [windowWidth, setWindowWidth] = useState<number>(0);

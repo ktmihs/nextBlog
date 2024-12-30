@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '@app/(main)/layout.module.css';
-import Fab from '@/common/component/Fab/Fab';
+import Fab from '@components/Fab/Fab';
 import { ChildrenType } from '@/common/type';
 
 export default function MainLayout({ children }: ChildrenType) {

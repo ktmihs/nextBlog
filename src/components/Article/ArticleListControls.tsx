@@ -1,8 +1,8 @@
 'use client';
 
-import styles from '@common/component/Article/ArticleListControls.module.css';
-import Dropdown from '@/common/component/Dropdown/Dropdown';
-import { articleList } from '@/common/component/Article/Article.mock';
+import styles from '@components/Article/ArticleListControls.module.css';
+import Dropdown from '@components/Dropdown/Dropdown';
+import { articleList } from '@components/Article/Article.mock';
 
 const ArticleListControls = () => {
 	const totalCnt = articleList.length;

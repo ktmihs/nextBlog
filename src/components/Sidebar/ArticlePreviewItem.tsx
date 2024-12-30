@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { articleType } from '@/common/component/Article/ArticleType';
-import styles from '@/common/component/Sidebar/ArticlePreviewItem.module.css';
+import { articleType } from '@components/Article/ArticleType';
+import styles from '@components/Sidebar/ArticlePreviewItem.module.css';
 
 const PreviewArticleItem = ({ article }: { article: articleType }) => {
 	return (

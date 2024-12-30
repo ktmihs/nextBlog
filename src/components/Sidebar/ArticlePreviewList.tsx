@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@lib/store';
-import { articleType } from '@/common/component/Article/ArticleType';
-import { articleList } from '@/common/component/Article/Article.mock';
-import styles from '@/common/component/Sidebar/ArticlePreviewList.module.css';
-import CategoryItem from '@/common/component/Sidebar/ArticlePreviewCategoryItem';
-import PreviewArticleItem from '@/common/component/Sidebar/ArticlePreviewItem';
+import { articleType } from '@components/Article/ArticleType';
+import { articleList } from '@components/Article/Article.mock';
+import styles from '@components/Sidebar/ArticlePreviewList.module.css';
+import CategoryItem from '@components/Sidebar/ArticlePreviewCategoryItem';
+import PreviewArticleItem from '@components/Sidebar/ArticlePreviewItem';
 import { CategoryType } from '@/lib/features/category/categorySlice';
 
 interface classifyPostType {

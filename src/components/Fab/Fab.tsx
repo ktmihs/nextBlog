@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import styles from '@/common/component/Fab/Fab.module.css';
+import styles from '@components/Fab/Fab.module.css';
 
 const Fab = () => {
 	const router = useRouter();

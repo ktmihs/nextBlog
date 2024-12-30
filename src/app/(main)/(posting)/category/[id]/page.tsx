@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { IDPropsType } from '@/common/type';
 import styles from '@app/(main)/(posting)/category/[id]/page.module.css';
-import ArticleBox from '@/common/component/Article/ArticleBox';
-import { articleList } from '@/common/component/Article/Article.mock';
-import { articleType } from '@/common/component/Article/ArticleType';
-import ArticleListControls from '@/common/component/Article/ArticleListControls';
+import ArticleBox from '@components/Article/ArticleBox';
+import { articleList } from '@components/Article/Article.mock';
+import { articleType } from '@components/Article/ArticleType';
+import ArticleListControls from '@components/Article/ArticleListControls';
 
 const CategoryPage: FC<IDPropsType> = ({ params }) => {
 	return (

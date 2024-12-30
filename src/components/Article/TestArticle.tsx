@@ -1,5 +1,5 @@
-import styles from '@/common/component/Article/ArticleRow.module.css';
-import { articleType } from '@/common/component/Article/ArticleType';
+import styles from '@components/Article/ArticleRow.module.css';
+import { articleType } from '@components/Article/ArticleType';
 import { useRouter } from 'next/router';
 
 interface propsType {

@@ -1,7 +1,7 @@
 import {
 	articleDetailType,
 	articleType,
-} from '@/common/component/Article/ArticleType';
+} from '@components/Article/ArticleType';
 
 export const articleList = new Array(10).fill(null).reduce((list, _, idx) => {
 	const newArticle: articleType = {

@@ -1,7 +1,7 @@
 'use client';
 
 import { MouseEvent, useEffect, useRef, useState } from 'react';
-import styles from '@/common/component/Dropdown/Dropdown.module.css';
+import styles from '@components/Dropdown/Dropdown.module.css';
 
 export interface dataItemType {
 	key: string;

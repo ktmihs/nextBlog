@@ -7,8 +7,8 @@ import {
 	PreviewArticleItem,
 	DesktopSidebar,
 	MobileSidebar,
-} from '@common/component/Sidebar/TestSIdebar';
-import { articleList } from '@common/component/Article/Article.mock';
+} from '@components/Sidebar/TestSIdebar';
+import { articleList } from '@components/Article/Article.mock';
 
 jest.mock('next/navigation', () => ({
 	useRouter: jest.fn(),

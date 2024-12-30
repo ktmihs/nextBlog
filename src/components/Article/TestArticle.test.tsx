@@ -4,8 +4,8 @@ import userEvent from '@testing-library/user-event';
 import {
 	ArticleBoxTest,
 	ArticleRowTest,
-} from '@common/component/Article/TestArticle';
-import { articleList } from '@common/component/Article/Article.mock';
+} from '@components/Article/TestArticle';
+import { articleList } from '@components/Article/Article.mock';
 
 jest.mock('next/router', () => ({
 	useRouter: jest.fn(),

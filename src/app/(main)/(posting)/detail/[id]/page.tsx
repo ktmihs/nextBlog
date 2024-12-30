@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { IDPropsType } from '@/common/type';
 import styles from '@/app/(main)/(posting)/detail/[id]/page.module.css';
-import { articleList } from '@/common/component/Article/Article.mock';
-import { articleType } from '@/common/component/Article/ArticleType';
-import ArticleRow from '@/common/component/Article/ArticleRow';
-import ArticleDetail from '@/common/component/Article/ArticleDetail';
+import { articleList } from '@components/Article/Article.mock';
+import { articleType } from '@components/Article/ArticleType';
+import ArticleRow from '@components/Article/ArticleRow';
+import ArticleDetail from '@components/Article/ArticleDetail';
 
 const DetailPage: FC<IDPropsType> = ({ params }) => {
 	// id 기반 페이지 렌더링

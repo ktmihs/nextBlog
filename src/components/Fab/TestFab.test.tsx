@@ -1,5 +1,5 @@
 import { useRouter } from 'next/navigation';
-import Fab from '@common/component/Fab/Fab';
+import Fab from '@components/Fab/Fab';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 

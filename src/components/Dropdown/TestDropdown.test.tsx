@@ -1,4 +1,4 @@
-import Dropdown from '@common/component/Dropdown/Dropdown';
+import Dropdown from '@components/Dropdown/Dropdown';
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 const filterOption = [
