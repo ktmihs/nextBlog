@@ -2,8 +2,8 @@ import React, { useState, MouseEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { CategoryType } from '@lib/features/category/categorySlice';
 import { articleType } from '@components/Article/ArticleType';
-import styles from '@components/Sidebar/ArticlePreviewItem.module.css';
-import style from '@components/Sidebar/Sidebar.module.css';
+import articlePreviewItemStyles from '@components/Sidebar/ArticlePreviewItem.module.css';
+import sidebarStyles from '@components/Sidebar/Sidebar.module.css';
 
 interface categoryLenType {
 	[key: string]: number;
@@ -42,7 +42,7 @@ export const PreviewArticleItem = ({ article }: { article: articleType }) => {
 	};
 	return (
 		<a href={`/detail/${article.id}`} onClick={handleClick}>
-			<section className={styles.summarySection}>
+			<section className={articlePreviewItemStyles.summarySection}>
 				<p>{article.title}</p>
 				<img src={article.thumbnail} alt={article.title} />
 			</section>
@@ -61,24 +61,33 @@ export const DesktopSidebar = () => {
 	};
 
 	return (
-		<section className={style.sidebar}>
+		<section className={sidebarStyles.sidebar}>
 			{windowWidth <= 992 && (
-				<section className={style.classifyTitle} onClick={handleClassify}>
+				<section
+					className={sidebarStyles.classifyTitle}
+					onClick={handleClassify}
+				>
 					<span
 						id="classifyPost"
-						className={currentTab === 'classifyPost' ? style.activeTab : ''}
+						className={
+							currentTab === 'classifyPost' ? sidebarStyles.activeTab : ''
+						}
 					>
 						분류
 					</span>
 					<span
 						id="currentPost"
-						className={currentTab === 'currentPost' ? style.activeTab : ''}
+						className={
+							currentTab === 'currentPost' ? sidebarStyles.activeTab : ''
+						}
 					>
 						최근글
 					</span>
 					<span
 						id="popularPost"
-						className={currentTab === 'popularPost' ? style.activeTab : ''}
+						className={
+							currentTab === 'popularPost' ? sidebarStyles.activeTab : ''
+						}
 					>
 						인기글
 					</span>
@@ -99,24 +108,33 @@ export const MobileSidebar = () => {
 	};
 
 	return (
-		<section className={style.sidebar}>
+		<section className={sidebarStyles.sidebar}>
 			{windowWidth > 992 && (
-				<section className={style.classifyTitle} onClick={handleClassify}>
+				<section
+					className={sidebarStyles.classifyTitle}
+					onClick={handleClassify}
+				>
 					<span
 						id="classifyPost"
-						className={currentTab === 'classifyPost' ? style.activeTab : ''}
+						className={
+							currentTab === 'classifyPost' ? sidebarStyles.activeTab : ''
+						}
 					>
 						분류
 					</span>
 					<span
 						id="currentPost"
-						className={currentTab === 'currentPost' ? style.activeTab : ''}
+						className={
+							currentTab === 'currentPost' ? sidebarStyles.activeTab : ''
+						}
 					>
 						최근글
 					</span>
 					<span
 						id="popularPost"
-						className={currentTab === 'popularPost' ? style.activeTab : ''}
+						className={
+							currentTab === 'popularPost' ? sidebarStyles.activeTab : ''
+						}
 					>
 						인기글
 					</span>

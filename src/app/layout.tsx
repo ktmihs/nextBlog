@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import '@styles/globals.css';
 import RootProvider from '@app/RootProvider';
-import style from '@app/layout.module.css';
+import styles from '@app/layout.module.css';
 import { ChildrenType } from '@common/type';
 
 export const metadata = {
@@ -14,17 +14,17 @@ export default function RootLayout({ children }: ChildrenType) {
 		<html lang="ko">
 			<body>
 				<RootProvider>
-					<header className={style.header}>
+					<header className={styles.header}>
 						<Link href={'/'}>
 							<h1>logo</h1>
 						</Link>
-						<section className={style.UIbar}>
+						<section className={styles.UIbar}>
 							<div>search bar</div>
 							<div>user</div>
 						</section>
 					</header>
-					<main className={style.main}>{children}</main>
-					<footer className={style.footer}>contact</footer>
+					<main className={styles.main}>{children}</main>
+					<footer className={styles.footer}>contact</footer>
 				</RootProvider>
 			</body>
 		</html>

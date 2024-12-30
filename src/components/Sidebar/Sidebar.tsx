@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, MouseEvent } from 'react';
-import style from '@components/Sidebar/Sidebar.module.css';
+import styles from '@components/Sidebar/Sidebar.module.css';
 import ArticlePreviewList from '@components/Sidebar/ArticlePreviewList';
 
 const Sidebar = () => {
@@ -23,24 +23,24 @@ const Sidebar = () => {
 	};
 
 	return (
-		<section className={style.sidebar}>
+		<section className={styles.sidebar}>
 			{windowWidth <= 992 && (
-				<section className={style.classifyTitle} onClick={handleClassify}>
+				<section className={styles.classifyTitle} onClick={handleClassify}>
 					<span
 						id="classifyPost"
-						className={currentTab === 'classifyPost' ? style.activeTab : ''}
+						className={currentTab === 'classifyPost' ? styles.activeTab : ''}
 					>
 						분류
 					</span>
 					<span
 						id="currentPost"
-						className={currentTab === 'currentPost' ? style.activeTab : ''}
+						className={currentTab === 'currentPost' ? styles.activeTab : ''}
 					>
 						최근글
 					</span>
 					<span
 						id="popularPost"
-						className={currentTab === 'popularPost' ? style.activeTab : ''}
+						className={currentTab === 'popularPost' ? styles.activeTab : ''}
 					>
 						인기글
 					</span>
