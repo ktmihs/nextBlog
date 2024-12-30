@@ -7,7 +7,7 @@ import {
 	PreviewArticleItem,
 	DesktopSidebar,
 	MobileSidebar,
-} from '@components/Sidebar/TestSIdebar';
+} from '@components/Sidebar/TestSidebar';
 import { articleList } from '@components/Article/Article.mock';
 
 jest.mock('next/navigation', () => ({
