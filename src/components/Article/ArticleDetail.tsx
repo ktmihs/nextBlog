@@ -1,8 +1,11 @@
-import styles from '@/common/component/Article/ArticleDetail.module.css';
-import { article } from '@/common/component/Article/Article.mock';
+'use client';
+
+import styles from '@components/Article/ArticleDetail.module.css';
+import { article } from '@components/Article/Article.mock';
 
 const ArticleDetail = ({ currentId }: { currentId: string }) => {
 	// store의 현재 currentId를 통한 articleList API로 가져오기
+	const result = 'API 받아온 데이터' as any;
 
 	return (
 		<article>
@@ -12,7 +15,7 @@ const ArticleDetail = ({ currentId }: { currentId: string }) => {
 				<span>•</span>
 				<span>{article.date}</span>
 			</section>
-			<section>{article.content}</section>
+			<section>{result}</section>
 		</article>
 	);
 };
