@@ -1,0 +1,16 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"module": "CommonJS",
+		"target": "ESNext",
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"types": ["node"], // 노드 환경 지원
+		"outDir": "./dist/server", // 빌드 경로
+		"rootDir": "./src/server",
+		"noEmit": false,
+		"lib": ["ESNext"]
+	},
+	"include": ["src/server/**/*.ts"],
+	"exclude": ["node_modules", "src/app/**/*", "src/components/**/*"]
+}

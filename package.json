@@ -8,8 +8,8 @@
 		"start": "next start",
 		"lint": "next lint",
 		"test": "jest",
-		"dev:server": "ts-node src/server/server.ts",
-		"build:server": "tsc -p tsconfig.server.json",
+		"dev:server": "ts-node -P tsconfig.server.json src/server/server.ts",
+		"build:server": "tsc -P tsconfig.server.json",
 		"start:server": "node dist/server/server.js"
 	},
 	"dependencies": {
