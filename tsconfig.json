@@ -24,8 +24,17 @@
 			"@components/*": ["./src/components/*"],
 			"@styles/*": ["./src/styles/*"],
 			"@lib/*": ["./src/lib/*"]
-		}
+		},
+		"types": ["node"], // 노드 환경 지원
+		"outDir": "./dist", // 빌드 경로
+		"rootDir": "./src"
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		"src/server/**/*.ts"
+	],
 	"exclude": ["node_modules"]
 }
