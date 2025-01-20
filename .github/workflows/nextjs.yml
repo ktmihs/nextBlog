@@ -1,0 +1,20 @@
+name: Build Next.js site to Pages
+run-name: ${{ github.actor }} has been added new commit.
+
+on:
+  push:
+    branches-ignore: "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Detect package manager
+        id: detect-package-manager
+        run: npm ci
+      - name: Setup Node
+        uses: actions/setup-node@v4
+      - name: Build with Next.js
+        run: npm next build
