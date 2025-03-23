@@ -1,12 +1,21 @@
-// `require`로 패키지 불러오기
 import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config();
 
-// express 애플리케이션 생성
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
+const DB_URI = process.env.DB_URI || '';
 
-// 미들웨어
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// MONGODB 서버 실행
+mongoose
+	.connect(DB_URI)
+	.then(() => console.log('Successfully connected to mongodb'))
+	.catch((e) => console.error(e));
 
 // 서버 실행
 app.listen(PORT, () => {
