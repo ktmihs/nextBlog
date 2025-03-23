@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
 dotenv.config();
 
 const app = express();
@@ -10,6 +11,14 @@ const DB_URI = process.env.DB_URI || '';
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(
+	cors({
+		origin: 'http://localhost:3000',
+		methods: 'GET,POST,PUT,DELETE',
+		credentials: true,
+	}),
+);
 
 // MONGODB 서버 실행
 mongoose
