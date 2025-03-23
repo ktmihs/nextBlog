@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import categoryRouter from './routes/category';
 dotenv.config();
 
 const app = express();
@@ -19,6 +20,8 @@ app.use(
 		credentials: true,
 	}),
 );
+
+app.use('/category', categoryRouter);
 
 // MONGODB 서버 실행
 mongoose
