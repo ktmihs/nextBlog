@@ -3,7 +3,9 @@ run-name: ${{ github.actor }} has been added new commit.
 
 on:
   push:
-    branches-ignore: "main"
+    branches: ['main', 'develop']
+  pull_request:
+    branches: ['main', 'develop']
 
 jobs:
   build:
@@ -11,10 +13,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Detect package manager
-        id: detect-package-manager
-        run: npm ci
       - name: Setup Node
         uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
       - name: Build with Next.js
-        run: npm next build
+        run: npm run build
