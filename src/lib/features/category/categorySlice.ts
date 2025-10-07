@@ -23,7 +23,11 @@ const categorySlice = createSlice({
 	name: 'category',
 	initialState,
 	reducers: {
-		setCategory: (state, action: PayloadAction<CategoryType>) => {
+		addCategory: (state, action: PayloadAction<CategoryType>) => {
+			const exists = state.categoryList.some(
+				({ id }) => id === action.payload.id,
+			);
+			if (exists) return;
 			state.categoryList.push({
 				id: action.payload.id,
 				name: action.payload.name,
@@ -35,5 +39,5 @@ const categorySlice = createSlice({
 	},
 });
 
-export const { setCategory, selectCategory } = categorySlice.actions;
+export const { addCategory, selectCategory } = categorySlice.actions;
 export default categorySlice.reducer;
