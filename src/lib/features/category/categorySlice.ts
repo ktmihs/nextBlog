@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { getCategories } from '@lib/features/category/categoryThunk';
 
 export interface CategoryType {
 	id: string;
@@ -8,32 +9,63 @@ export interface CategoryType {
 export interface CategoryStateType {
 	categoryList: CategoryType[];
 	selectedCategory: string | null;
+	loading: boolean;
+	error: string | null;
 }
 
 const initialState: CategoryStateType = {
-	categoryList: [
-		{ id: 'all', name: '전체' },
-		{ id: 'project', name: 'project' },
-		{ id: 'study', name: 'study' },
-	],
+	categoryList: [],
 	selectedCategory: null,
+	loading: false,
+	error: null,
 };
 
 const categorySlice = createSlice({
 	name: 'category',
 	initialState,
 	reducers: {
-		setCategory: (state, action: PayloadAction<CategoryType>) => {
+		addCategory: (state, action: PayloadAction<CategoryType>) => {
+			const exists = state.categoryList.some(
+				({ id }) => id === action.payload.id,
+			);
+			if (exists) return;
 			state.categoryList.push({
 				id: action.payload.id,
 				name: action.payload.name,
 			});
 		},
-		selectCategory: (state, action: PayloadAction<string>) => {
+		selectCategory: (state, action: PayloadAction<string | null>) => {
 			state.selectedCategory = action.payload;
 		},
+		removeSelectedCategory: state => {
+			state.categoryList = state.categoryList.filter(
+				({ id }) => id !== state.selectedCategory,
+			);
+			state.selectedCategory = null;
+		},
+	},
+	extraReducers: builder => {
+		builder
+			.addCase(getCategories.pending, state => {
+				state.loading = true;
+				state.error = null;
+			})
+			.addCase(
+				getCategories.fulfilled,
+				(state, action: PayloadAction<CategoryType[]>) => {
+					state.loading = false;
+					state.error = null;
+					state.categoryList = action.payload;
+				},
+			)
+			.addCase(getCategories.rejected, (state, action) => {
+				state.loading = false;
+				state.error =
+					action.error.message || '카테고리를 불러오는데 실패했습니다.';
+			});
 	},
 });
 
-export const { setCategory, selectCategory } = categorySlice.actions;
+export const { addCategory, selectCategory, removeSelectedCategory } =
+	categorySlice.actions;
 export default categorySlice.reducer;

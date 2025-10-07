@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '@lib/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '@lib/store';
 import { articleType } from '@components/Article/ArticleType';
 import { articleList } from '@components/Article/Article.mock';
 import styles from '@components/Sidebar/ArticlePreviewList.module.css';
 import CategoryItem from '@components/Sidebar/ArticlePreviewCategoryItem';
 import PreviewArticleItem from '@components/Sidebar/ArticlePreviewItem';
-import { CategoryType } from '@lib/features/category/categorySlice';
+import {
+	CategoryType,
+} from '@lib/features/category/categorySlice';
+import { getCategories } from '@/lib/features/category/categoryThunk';
 
 interface classifyPostType {
 	tabName: '분류';
@@ -21,6 +24,7 @@ interface previewArticleType {
 type sidebarListType = classifyPostType | previewArticleType;
 
 const ArticlePreviewList = ({ currentTab }: { currentTab: string }) => {
+	const dispatch = useDispatch<AppDispatch>();
 	const categoryList = useSelector(
 		(state: RootState) => state.category.categoryList,
 	);
@@ -28,6 +32,11 @@ const ArticlePreviewList = ({ currentTab }: { currentTab: string }) => {
 		tabName: '분류',
 		articleList: [],
 	});
+
+	useEffect(() => {
+		dispatch(getCategories());
+	}, []);
+
 	useEffect(() => {
 		if (currentTab === 'classifyPost') {
 			setPreviewArticle({
@@ -45,7 +54,7 @@ const ArticlePreviewList = ({ currentTab }: { currentTab: string }) => {
 				articleList: articleList.slice(-3),
 			});
 		}
-	}, [currentTab]);
+	}, [currentTab, categoryList]);
 
 	return (
 		<section className={styles.classify}>
