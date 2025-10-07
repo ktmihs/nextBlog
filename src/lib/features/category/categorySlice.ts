@@ -8,15 +8,15 @@ export interface CategoryType {
 export interface CategoryStateType {
 	categoryList: CategoryType[];
 	selectedCategory: string | null;
+	loading: boolean;
+	error: string | null;
 }
 
 const initialState: CategoryStateType = {
-	categoryList: [
-		{ id: 'all', name: '전체' },
-		{ id: 'project', name: 'project' },
-		{ id: 'study', name: 'study' },
-	],
+	categoryList: [],
 	selectedCategory: null,
+	loading: false,
+	error: null,
 };
 
 const categorySlice = createSlice({
@@ -29,7 +29,7 @@ const categorySlice = createSlice({
 				name: action.payload.name,
 			});
 		},
-		selectCategory: (state, action: PayloadAction<string>) => {
+		selectCategory: (state, action: PayloadAction<string | null>) => {
 			state.selectedCategory = action.payload;
 		},
 	},
