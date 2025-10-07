@@ -1,5 +1,5 @@
 import categoryReducer, {
-	setCategory,
+	addCategory,
 	selectCategory,
 	CategoryType,
 	CategoryStateType,
@@ -12,13 +12,13 @@ const initialState: CategoryStateType = {
 	error: null,
 };
 
-const testSetCategory = (params: CategoryType, state = initialState) => {
-	const action = setCategory(params);
+const testAddCategory = (params: CategoryType, state = initialState) => {
+	const action = addCategory(params);
 	return categoryReducer(state, action);
 };
 
 test('카테고리 항목 추가', () => {
-	const newState = testSetCategory({ id: 'technology', name: '기술' });
+	const newState = testAddCategory({ id: 'technology', name: '기술' });
 	expect(newState.categoryList.at(-1)).toEqual({
 		id: 'technology',
 		name: '기술',
@@ -26,10 +26,10 @@ test('카테고리 항목 추가', () => {
 });
 
 test('카테고리 항목 여러개 추가', () => {
-	const state1 = testSetCategory({ id: 'all', name: '전체' });
-	const state2 = testSetCategory({ id: 'project', name: 'project' }, state1);
-	const state3 = testSetCategory({ id: 'study', name: 'study' }, state2);
-	const newState = testSetCategory({ id: 'technology', name: '기술' }, state3);
+	const state1 = testAddCategory({ id: 'all', name: '전체' });
+	const state2 = testAddCategory({ id: 'project', name: 'project' }, state1);
+	const state3 = testAddCategory({ id: 'study', name: 'study' }, state2);
+	const newState = testAddCategory({ id: 'technology', name: '기술' }, state3);
 	expect(newState.categoryList).toEqual([
 		{ id: 'all', name: '전체' },
 		{ id: 'project', name: 'project' },
@@ -39,7 +39,7 @@ test('카테고리 항목 여러개 추가', () => {
 });
 
 test('특정 카테고리 선택', () => {
-	const addedState = testSetCategory({ id: 'technology', name: '기술' });
+	const addedState = testAddCategory({ id: 'technology', name: '기술' });
 	const action = selectCategory('technology');
 	const newState = categoryReducer(addedState, action);
 	expect(newState.selectedCategory).toBe('technology');
