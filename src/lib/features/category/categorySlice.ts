@@ -66,5 +66,6 @@ const categorySlice = createSlice({
 	},
 });
 
-export const { addCategory, selectCategory } = categorySlice.actions;
+export const { addCategory, selectCategory, removeSelectedCategory } =
+	categorySlice.actions;
 export default categorySlice.reducer;

@@ -1,6 +1,7 @@
 import categoryReducer, {
 	addCategory,
 	selectCategory,
+	removeSelectedCategory,
 	CategoryType,
 	CategoryStateType,
 } from '@lib/features/category/categorySlice';
@@ -43,4 +44,14 @@ test('특정 카테고리 선택', () => {
 	const action = selectCategory('technology');
 	const newState = categoryReducer(addedState, action);
 	expect(newState.selectedCategory).toBe('technology');
+});
+
+test('선택된 카테고리 삭제', () => {
+	const addedState = testAddCategory({ id: 'technology', name: '기술' });
+	const action = selectCategory('technology');
+	const newState = categoryReducer(addedState, action);
+	const newAction = removeSelectedCategory();
+	const removeState = categoryReducer(newState, newAction);
+	expect(removeState.categoryList).toEqual([]);
+	expect(removeState.selectedCategory).toBe(null);
 });
