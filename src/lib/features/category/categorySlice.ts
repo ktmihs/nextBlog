@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { getCategories } from '@lib/features/category/categoryThunk';
 
 export interface CategoryType {
 	id: string;
@@ -42,6 +43,26 @@ const categorySlice = createSlice({
 			);
 			state.selectedCategory = null;
 		},
+	},
+	extraReducers: builder => {
+		builder
+			.addCase(getCategories.pending, state => {
+				state.loading = true;
+				state.error = null;
+			})
+			.addCase(
+				getCategories.fulfilled,
+				(state, action: PayloadAction<CategoryType[]>) => {
+					state.loading = false;
+					state.error = null;
+					state.categoryList = action.payload;
+				},
+			)
+			.addCase(getCategories.rejected, (state, action) => {
+				state.loading = false;
+				state.error =
+					action.error.message || '카테고리를 불러오는데 실패했습니다.';
+			});
 	},
 });
 
