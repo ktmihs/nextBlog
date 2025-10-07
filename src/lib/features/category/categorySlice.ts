@@ -36,6 +36,12 @@ const categorySlice = createSlice({
 		selectCategory: (state, action: PayloadAction<string | null>) => {
 			state.selectedCategory = action.payload;
 		},
+		removeSelectedCategory: state => {
+			state.categoryList = state.categoryList.filter(
+				({ id }) => id !== state.selectedCategory,
+			);
+			state.selectedCategory = null;
+		},
 	},
 });
 
