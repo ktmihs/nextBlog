@@ -8,7 +8,8 @@ import categoryReducer, {
 const initialState: CategoryStateType = {
 	categoryList: [],
 	selectedCategory: null,
-	currentArticleList: null,
+	loading: false,
+	error: null,
 };
 
 const testSetCategory = (params: CategoryType, state = initialState) => {
